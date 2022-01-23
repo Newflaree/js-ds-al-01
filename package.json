@@ -1,0 +1,15 @@
+{
+  "name": "01-big-o-notation",
+  "version": "1.0.0",
+  "description": "## Introducción a Big O ### Objetivos de la sección * Motivar la necesidad de cosas como la notación Big O. * Describir qué es la notación Big O. * Simplificar las expresiones Big O. * Definiremos el 'time complexity' y el 'space complexity'. * Evaluaremos la complejidad de tiempo y de espacio de diferentes algoritmos usando la notación Big O. * Describiremos qué es un logaritmo matemático.",
+  "main": "0001.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "perf_hooks": "0.0.1"
+  }
+}
