@@ -92,7 +92,32 @@ const addUpTo = ( n ) => {
 }
 
 let t1 = performance.now();
-addUpTo(100000000)
+addUpTo(1000000000)
 let t2 = performance.now();
 console.log(`Time Elapse: ${ (t2 - t1) / 1000 } seconds`);
 ```
+
+Si sumamos los primeros 1000000000 números, cada vez que lo ejecutemos, obtendremos una pequeña variación en los resultados incluso en la misma máquina, sin cambiar el código y solo ejecutandolo una y otra vez.
+
+Por otro lado, si utilizamos la segunda solución, nos encontramos con otro panorama. Pasando el valor que queramos, siempre va a demorar al rededor de lo mismo, pero sigue variando el valor en cada iteración.
+```
+const addUpTo = ( n ) => {
+	return n * ( n + 1 ) / 2;
+}
+
+let t1 = performance.now();
+addUpTo(1000000000)
+let t2 = performance.now();
+console.log(`Time Elapse: ${ (t2 - t1) / 1000 } seconds`);
+```
+
+### Problemas con el tiempo.
+* Diferentes máquinas registran diferentes tiempos. Esto no significa que la primera solución es de repente más rápida que la segunda. pero significa que los margenes pueden cambiar, las medidas de referencia pueden cambiar y casi es un hecho de que así será.
+* Esta misma máquina registrará tiempos diferentes. Se podría decir que la variación es insignificante pero nos basta con saber que no es preciso y no podemos confiarnos de ese factor.
+* Para algoritmos rápidos, las cosas que están sucediendo en una escala realmente muy velóz podrían no ser lo suficientemente precisas. Podemos tener cualtro algoritmos muy rápidos y entre estos puede haber uno que sea particularmente más rápido que es resto, pero si nuestras funciones de temporizador no pueden resolverlo porque se sabe que el intervalo de tiempo más pequeño que se puede medir no es lo suficientemente bueno, entonces realmente no nos ayuda.
+
+Entonces, ¿Cómo recorremos nuestro código y realmente hablamos en terminos generales sobre qué código es mejor sin tener que ir y cronometrarlo?
+
+- No es malo cronometrar el código, se puede rescatar mucha información al respecto, pero no quiero comparar una solución que demore una hora vs una que antes demoraba cuatro horas y ejecutarlas para saber cuál es más rápido.
+
+#### En terminos generales, se trata de cómo el código se compara con otro código sin tener que pasar por todo esto. Ahí es donde entra la notación Big O.
