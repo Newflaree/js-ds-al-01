@@ -121,3 +121,60 @@ Entonces, ¿Cómo recorremos nuestro código y realmente hablamos en terminos ge
 - No es malo cronometrar el código, se puede rescatar mucha información al respecto, pero no quiero comparar una solución que demore una hora vs una que antes demoraba cuatro horas y ejecutarlas para saber cuál es más rápido.
 
 #### En terminos generales, se trata de cómo el código se compara con otro código sin tener que pasar por todo esto. Ahí es donde entra la notación Big O.
+
+## Introducción oficial a Big O.
+* Big O es una forma formal de contar borrosamente.
+* Nos permite hablar de una manera muy formal sobre cómo crece el tiempo de ejecución de un algoritmo a medida que crecen las entradas. Es una forma de decribir la relación entre la entrada a una función o a medida que crece y cómo eso cambia el tiempo de ejecución de esa función. La relación entre el tamaño de entrada y luego el tiempo relativo a esa entrada. Por lo tanto, no nos interesan losa otros detalles, solo la tendencias generales.
+
+Decimos que un algoritmo de o es Big O de f, entonces si el número de operaciones simples que la computadora tiene que hacer es eventualmente menor que un evento de tiempo constante f y aumenta e.
+
+* Cuando hablamos de Big O, estamos hablando del peor de los casos.
+
+#### Primer Ejemplo:
+En nuestra segunda implementación, siempre son tres operaciones. Gracias a esto, su tiempo tienda a ser constante ya que la tendencia es que sea defectuoso. O(1)
+```
+function addUpTo( n ) {
+  return n * ( n + 1 ) / 2;
+}
+```
+A medida que crece la entrada a esta función en este caso no tiene cambios, no se refleja en el tiempo de ejecución.
+
+En nuestra primera implementación, crece y crece, el tiempo de ejecución crece básicamente en una proporción 1 a 1, el número de operaciones finalmente está limitado por un múltiplo de. O(n)
+```
+function addUpTo( n ) {
+  let total = 0;
+  for ( let i = 1; i <= n; i++ ) {
+    total += i;
+  }
+  return total;
+}
+```
+
+#### Segundo Ejemplo:
+```
+function countUpAndDown( n ) {
+  console.log( 'Going up!' );
+  for ( let i = 0; i < n; i++ ) {
+    console.log( i );
+  }
+  console.log( 'At the top!\nGoing down...' );
+  for ( let j = n - 1; j >= 0; j-- ) {
+    console.log( j );
+  }
+  console.log( 'Back down. Bye!' );
+}
+```
+Así que si estamos tratando de descubrir el Big O para esta función. A medida que n crece, tenemos aproximadamente una operación para tener un bucle. Al ver el código, nos damos cuenta de que cada for es un O(n), como en nuestra implementación anterior. No importa los for que haya, lo que importa es el panorama general. Entonces es un O(n).
+
+#### Tercer Ejemplo:
+```
+function printAllPairs( n ) {
+  for ( var i = 0; i < n; i++ ) {
+    for ( var j = 0; j < n; j++ ) {
+      console.log( i, j );
+    }
+  }
+}
+```
+En esta oportunidad tenemos un bucle anidado. Al igual que en el ejemplo anterior, tenermos dos for y cada uno es un O(n). La diferencia es que al estar anidados es como decir O(n x n). Entonces es un O(n2).
+
