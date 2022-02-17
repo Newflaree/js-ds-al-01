@@ -1,3 +1,4 @@
+console.clear();
 function countUpAndDown( n ) {
   console.log( 'Going up!' );
   for ( let i = 0; i < n; i++ ) {

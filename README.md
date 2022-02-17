@@ -178,3 +178,21 @@ function printAllPairs( n ) {
 ```
 En esta oportunidad tenemos un bucle anidado. Al igual que en el ejemplo anterior, tenermos dos for y cada uno es un O(n). La diferencia es que al estar anidados es como decir O(n x n). Entonces es un O(n2).
 
+
+## Simplificación de las expresiones Big O.
+Ahora vamos a hablar sobre algunas reglas reales que podemos usar para ayudarnos a simplificar estas expresiones.
+
+Por ejemplo, si tenemos una expresion O(n2 + 5n + 8), este sería sólo una O(n2). Esto se puede explicar basandonos en la definición principal del BigO, siempre evaluar lo más grande desde un punto de vista lo más lejano posible, sin ir a los detalles nunca. Ahora vamos a probar la expresión antrior. Si pasamos n = 100, el resultado a medio terminar sería: O( 10000 + 500 + 8 ). En este punto, pareciera que evaluar n2 junto a n sigue siendo difuso ya que se podría decir que n y n2 están en una razón de 1:20. Elevemos n a n = 10000. El resultado sería O( 100000000 + 50000 + 8 ). En este punto ya tienen una razón de 1:20000, n comienza a ser insignificante con respecto a n2 por lo que esta expresión será simplemente n2. Cuando hablamos de evaluar desde el punto de vista más amplio, habla del volumen cuantitativo en cuanto a las pruebas y evaluaciones del 
+
+Por lo tanto, un par de cosas que puede tener en cuenta al analizar la complejidad con grades cosas se complican y puede analizar y estresarse por los detalles individuales. Pero hay algunas reglas generales que pueden ayudar y no siempre funcionan, pero es un buen punto de partida.
+
+1. La primera es que las operaciones aritméticas son constantes. Entonces, para sumar algo o restar o dividir, y así será un tiempo constante, en realidad no importa el tamaña del número que su computadora toma aproximadamente la misma cantidad de tiempo para hacer dos más dos, ya que hace un millón más dos variables. 
+2. La asignación también es constante. Entonces, la computadora tarda aproximadamente  la misma cantidad de tiempo en hacer que una variable que conoces X sea igual a 1000. 
+3. Es aproximadamente el mismo elemento de acceso en una matriz que usa un índice.Entonces, si tengo una matriz y encuentro el primer elemento o el décimo elemento, siempre que use el índice o estoy trabajando con un objeto y tengo una clave que estoy usando para acceder a datos que también son de tiempo de ejecución constante.
+4. La siguiente regla es que en un bucle la complejidad es la longitud del bucle multipicado por la complejidad de lo qu sucede dentro del bucle. Entonces, si estuviéramos trabajando con un ciclo qu se repite en una lista o que se repite como lo hicimos anteriormente, es el camino para terminar a medida que crece ese ciclo. Pero lo que sucede dentro de ese ciclo también es consecuencia porque si hemos anidado los bucles como hemos visto, entonces terminamos con un tiempo de ejecución potencialmente cuadrado.
+
+De nuevo, no es necesario memorizar esto, pero es bueno hacerlo. Veamos un par de ejemplos.
+``` 
+```
+
+
