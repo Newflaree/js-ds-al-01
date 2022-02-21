@@ -11,7 +11,7 @@
 
 ### ¿Cuál es la idea aquí?
 Digamos que hay dos soluciones válidas para un problema.
-Anbos funcionan y son diferentes, no solo en nombres o nombres de variables o algo, sino que son totalmente diferentes en los enfoques, uno usa un bucle y el otro usa una cadena.
+Ambas funcionan y son diferentes, no solo en nombres o nombres de variables o algo, sino que son totalmente diferentes en los enfoques, uno usa un bucle y el otro usa una cadena.
 
 ¿Cómo sabemos cuál es el mejor?
 Eso es realmente de lo que se trata la notación Big O.
