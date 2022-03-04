@@ -193,6 +193,43 @@ Por lo tanto, un par de cosas que puede tener en cuenta al analizar la complejid
 
 De nuevo, no es necesario memorizar esto, pero es bueno hacerlo. Veamos un par de ejemplos.
 ``` 
+function logAtLeast5( n ) {
+  for ( var i = 1; i <= Math.max(5, n); i++ ) {
+	  console.log( i );
+  }
+}
 ```
 
+Entonces, todo lo que hace es imprimir números hasta N, pero como mínimo imprime 1 2 3 4 5. Entonces, si le doy tres, todavía obtenemos cinco, pero si le doy siete, obtenemos siete impresos.
 
+Entonces, ¿cuál es el gran O aquí? ¿Cómo clasificamos esto?
+
+Tenemos un bucle y este bucle va a ir de 1 a cinco o finalizará el que sea más grande. Por lo tanto, podríamos preocuparnos por los cinco, pero realmente solo debemos preocuparnos por eso, ya que es pequeño y lo que nos importa es lo que sucede y crece. Entonces es y continúa creciendo y creciendo hacia el infinito. 
+
+¿Qué pasa con el tiempo de ejecución?
+Bueno, si son 10 millonesm este ciclo se ejecutará 10 millones de veces. Los cinco primeros ya no importan. Entonces, podemos simplificar esto y decir que la gran O de esto ha terminado y debido a que esto crece, el número de operaciones crece en proporción a N. Entonces es un O(n).
+
+En el siguiente registro, vamos a registrar un máximo de 5 pegados.
+``` 
+function logAtLeast5( n ) {
+  for ( var i = 1; i <= Math.min(5, n); i++ ) {
+	  console.log( i );
+  }
+}
+```
+
+Y si intento tener esperanzas, llegaremos a lo sumo a 5 si conecto 30, todavía solo me da 5. Por lo tanto, tomará lo que sea más pequeño si le doy un gran número, si es más grande que 5, solo registrará 5, si le doy algo menos de 5, entonces se registrará. Y eso es importante tener en cuenta porque a medida que n crece aquí, no importa porque vamos a tomar el mínimo que es 5. Entonces, si N se acerca a 1000, este ciclo se ejecutará cinco veces y se si se acerca a 1000000, el ciclo se ejecutará cinco veces, si es que lo hay, entonces el ciclo se ejecutará dos veces y tres veces.
+
+Entonces, el gráfico en realidad se vería como si una escala de 5 peldaños y luego una recta de distancia N, estático en 5 y podemos simplificar eso diciendo que es bruto final, que es lo que nos importa. Entonces es un O(1)
+
+Entonces, si trazáramos ambos, lo que vemos es que la tendencia general es algo así, donde olvidé tener esas pequeñas transiciones. Si ponemos en un gráfico ambas funciones, tenemos que O(1) es prácticamente una linea de vuelo y eso es genial si podemos tener un tiempo de ejecución de uno. Es fantástico tener un tiempo de ejecución constante, es bastante rera cuando se trata de algoritmos más avanzados, como por ejemplo n, se podría ver la trajectoria general, es mucho mejor que algo como una ejecución cuadrática.
+
+Algunos ejemplo:
+O(n + 10) = O(n)
+O(100 * n) = O(n)
+O(25) = O(1)
+O(n^2 + n^3) = O(n^2)
+O(n + n + n + n) = O(n)
+
+
+## Complejidad espacial
