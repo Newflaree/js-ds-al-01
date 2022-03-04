@@ -225,11 +225,12 @@ Entonces, el gráfico en realidad se vería como si una escala de 5 peldaños y 
 Entonces, si trazáramos ambos, lo que vemos es que la tendencia general es algo así, donde olvidé tener esas pequeñas transiciones. Si ponemos en un gráfico ambas funciones, tenemos que O(1) es prácticamente una linea de vuelo y eso es genial si podemos tener un tiempo de ejecución de uno. Es fantástico tener un tiempo de ejecución constante, es bastante rera cuando se trata de algoritmos más avanzados, como por ejemplo n, se podría ver la trajectoria general, es mucho mejor que algo como una ejecución cuadrática.
 
 Algunos ejemplo:
-O(n + 10) = O(n)
-O(100 * n) = O(n)
-O(25) = O(1)
-O(n^2 + n^3) = O(n^2)
-O(n + n + n + n) = O(n)
+
+- O(n + 10) = O(n)
+- O(100 * n) = O(n)
+- O(25) = O(1)
+- O(n^2 + n^3) = O(n^2)
+- O(n + n + n + n) = O(n)
 
 
 ## Complejidad espacial
