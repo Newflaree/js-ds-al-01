@@ -234,3 +234,44 @@ Algunos ejemplo:
 
 
 ## Complejidad espacial
+Ahora cambiamos un poco y vamos a hablar sobre algo llamado complejidad espacial. 
+
+De todo lo que hemos hablado hasta ahora nos hemos preocupado por el tiempo sobre la rapidez con la que se ejecutan los algoritmos con el tiempo de ejecución. Eso se llama complejidad del tiempo.
+
+Hemos estado analizando el tiempo de ejecución de un algoritmo a medida que aumenta el tamaño de la entrada. Ahora hablamos de lo que sucede con el espacio que ocupa un algoritmo a medida que aumenta el tamaño de la entrada.
+
+Todavía podemos usar la notación Big-O para lo mismo, usar la misma sintaxis formal para describir lo que sucedió. Pero ahora nos vamos a centrar en el espacio. La cantidad de memoria quw está ocupando, por lo que hay algunas cosas básicas que debemos eliminar.
+
+Una es que, obviamente, a medida que crece si nos acercamos al infinito del tamaño de la entrada en si, que es va a crecer. Entonces vamos a ignorar esa parte.
+
+Es posible que escuche el término conplejidad del espacio auxiliar si investiga un poco. Si lees Wikipedia o algo que se refiere al espacio requerido por el algoritmo no solo incluye el espacio ocupado por las entradas. De eso es de lo que vamos a hablar.
+
+Nos importa el algoritmo en si porque nuestro fin está creciendo. Eso es el gran final o Big-O. Ese es el punto en el que vamos a decir que a medida que crecemos asumimos que es extremo de entrada va a crecer. Así que no nos preocupamos por ese espacio, cuidamos qué repercuciones tiene dentro del algoritmo.
+
+Entonces, a menos que se indique lo contrario cuando hablamos de la complejidad del espacio técnicamente, estamos hablando de la complejidad del espacio auxiliar. Esperamos que no sea demasiado aterrador, pero básicamente solo significa que nos estamos centrando en lo que sucede dentro del algoritmo.
+
+### Algunas reglas básicas.
+- La primera es que las cosas más primitivas como los number, boolean, null, undefined en JS son espacios constantes, por lo que no importa cuál sea el tamaño de la entrada. Si el número es 1 o el número es 1000, podemos considerar que el espacio constante no importa porque un boolean es verdadero o falso y ocupa la misma cantidad de espacio. 
+- Los string son un poco diferentes porque requieren 0 de espacio, por lo que es la longitud de la cadena. Si la cadena crece a 50 caracteres, la cadena ocupa 50 veces más espacio que una sola cadena de caracteres. Es un O(n)
+- Lo mismo con los Arrays y Objetos. En general, estamos hablando del Big-O donde es la longitud del Array o el número de claves para un objeto. Técnicamente, no es una longitud, pero si la longitud de un Array es reenviadora en comparación con otra que es dos, ocupa el doble de espacio que la matriz más corta.
+
+Vamos a ver un ejemplo
+``` 
+function sum( arr ) {
+  let total = 0;
+	for ( let i = 0; i < arr.length; i++ ) {
+		total += arr[i];
+	}
+	return total;
+}
+```
+
+Entonces, aquí nos estamos enfocando no en la complejidad del tiempo, nos estamos enfocando en la complejidad del espacio. Esta función llamada sum toma un Array y solo suma todos los elementos del Array. Tenemos un ciclo que va desde 0 hasta el final del Array y solo estamos agregando el valor de cada elemento de la matriz a la variable total, para luego devolverlo al final. Así que de nuevo, espacio no tiempo.
+
+Entonces, ¿cuáles son las cosas que ocupan espacio?
+
+Bueno, no importa cuál sea la longitud de la matriz, tenemos una variable llamada total (un number) y luego estamos recorriendo un ciclo que en realidad no nos interesa en si, pero dentro tenemos una varible i, así que ese es otro número y eso es todo por espacio. Una vez dentro del ciclo, volvemos a la variable total que estamos agregando, pero eso no importa. Eso lleva tiempo, pero el espacio ya está allí. No importa cuál sea el tamaño del Array O, en este caso, el tamaño de arr puede ser 1000 elementos, puede ser 1000000 de elementos. No tiene impacto en el espacio que ocupa porque solo tenemos estas dos variables y existen sin importa qué.
+
+No estamos agregando nuevas variables basadas en la longitud que estamos agregando a la variable total. No estamos haciendo una nueva variable. Eso realmente significa que tenemos un espacio constante en el espacio. O(1) space!
+
+Veamos otro ejemplo.
