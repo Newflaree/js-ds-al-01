@@ -275,3 +275,45 @@ Bueno, no importa cuál sea la longitud de la matriz, tenemos una variable llama
 No estamos agregando nuevas variables basadas en la longitud que estamos agregando a la variable total. No estamos haciendo una nueva variable. Eso realmente significa que tenemos un espacio constante en el espacio. O(1) space!
 
 Veamos otro ejemplo.
+``` 
+function double( arr ) {
+  let newArr = [];
+	for ( let i = 0; i < arr.length; i++ ) {
+		newArr.push( 2 * arr[i] );
+	}
+	return newArr;
+}
+```
+
+Esta función se llama double. Se necesita un Array. Si por ejemplo le pasamos un Array de tres elementos (double([1,2,3]){}), Pero cada uno se multiplica, Y lo que es importante a tener en cuenta es que está haciendo un nuevo Array. 
+Comienza con hacer un nuevo Array, luego recorre la longitud del primer Array que le enviamos por parámtro y luego multiplica cada elemento y lo empuja a un nuevo Array, para luego devolver ese nuevo Array.
+
+### ¿qué significa eso para la complejidad espacial de esto a medida que la longitud del Array crece a medida que la entrada se acerque al infinito?
+
+Vamos a crear un nuevo Array cada vez, pase lo que pase.
+Pero eso no es tan significante cuando consideramos lo que sucede dentro del ciclo for. Tenemos un nuevo Array que se está volviendo más y más grande, directamente proporcional a la longitud de la entrada. Entonces, si el Array tiene 10 elementos, almacenaremos 10 elementos en un nuevo Array. Si se trata de 50 elementos, se almacenan los 50 en un nuevo Array y se devuelve eso, el espacio ocupado es directamente proporcional a N en el Array de entrada. Entonces es O(n) space.
+
+
+## Logaritmos
+Si aprendes sobre logaritmos en un punto o aprendes sobre los logaritmos en un punto y olvidaste todo o nunca lo aprendiste, en esta sección vamos a tratar de revisarlo bastante simple y también rápido porque en realidad no importa que seamos maestros en logaritmos. La razón es porque algunos algoritmos que estamos revisando tienen un Big-O, esto no es simple, no es O(1), O(n), O(n^2). 
+
+Estas son complejidades muy comunes y las hemos visto, además de ser más fáciles de comprender. Pero hay algunas expresiones big-O que involucran algunas matemáticas más dificiles o expresiones menos comunes. Y algo que surge más de lo que personalmente quisira, nuestros logaritmos.
+
+Revisaremos algunos algoritmos donde su complejidad de tiempo en lugar de ser O(n) podría ser O(log n).
+
+Matemáticamente, un logaritmo es el inverso de la exponencioación. Al igual que la división y la multiplicación son un par de logaritmos donde su exponenciación es un par.
+- Por ejemplo, log2(8) = 3
+Lo que realmente estamos preguntando aquí es ¿a qué potencia de 2 equivale 8?
+- Entonces el resultado sería 2^3 = 8.
+
+Ahora, los logaritmos no siempre funcionan con la base 2. Sim embargo, los más comunes son os logaritmos binarios que son en base 2. Luego también está la base 10.
+
+Generalmente, la información que se encuentra sobre la notación Big-O, La taquigrafia es solo registrar se trata de una tendencia general calculada aproximadamente, en este caso el logaritno binario de un número mide aproximadamente el número de veces que puede dividir ese número entre dos. Hasta obtener un valor menor o igual a 1. No importan los detalles dentro del logaritmo, sino su tendencia general. Por ejemplo, se vería mucho más claro en un gráfico. Por lo tanto, la complejidad del tiempo logaritmico es excelente si tiene un algoritmo con complejidad de tiempo de registro. 
+
+Ciertos algoritmos de búsqueda tienen una complejidad de tiempo logaritmica y los veremos a medida que avanzamos en el progreso del curso, también los algoritmos de clasificación eficientes inluyen logaritmos. No todos los algoritmos de sorting, pero algunos de los más eficientes si lo hacen, así que veremos eso también. Y finalmente, la recursión a veces tiene una complejidad espacial logaritmica.
+
+### Recapitulando
+- La notación big-O tiene que ver son la tendencia de la imagen general de alto nivel como el tamaño de la entrada bruto- Queremos saber cómo cambia el tiempo de ejecución o cómo cambia la complejidad del espacio.
+- No nos importa la precisión, solo las tendencias generales.
+- La complejidad de espacio-tiempo medida por la notación big-O depende solo del algoritmo, no del hardware. Entonces, si, el tiempo real que podría llevar ejecutar un algoritmo en mi pc en comparación con una supercompuradora definitivamente será diferente. Pero la tendencia general no cambia.
+- La notación Big-O está en todas partes, así que vamos a practicar mucho.
